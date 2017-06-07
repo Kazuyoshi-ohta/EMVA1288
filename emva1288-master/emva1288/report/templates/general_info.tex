@@ -1,0 +1,54 @@
+\begin{minipage}[t]{0.975\linewidth}
+\begin{multicols}{2}
+\textsl{Vendor} \hfill %{{ basic.vendor|missing %}}
+\\[1mm]
+\textsl{Model} \hfill %{{ basic.model|missing %}}
+\\[1mm]
+\textsl{Data type} \hfill %{{ basic.data_type|missing %}}
+\\[1mm]
+\textsl{Sensor type} \hfill %{{ basic.sensor_type|missing %}}
+\\[1mm]
+\textsl{Diagonal} \hfill %{{ basic.sensor_diagonal|missing %}}
+\\[1mm]
+\textsl{Lens category} \hfill %{{ basic.lens_category|missing %}}
+\\[1mm]
+\textsl{Resolution} \hfill %{{ basic.resolution|missing %}} pixels
+\\[1mm]
+\textsl{Pixel size} \hfill %{{ basic.pixel_size|missing %}} $\mu m$
+\\[1mm]
+%{- if basic.sensor_type == "CCD" -%}
+\textsl{Readout type} \hfill %{{ basic.readout_type|missing %}}
+\\[1mm]
+\textsl{Transfer type} \hfill %{{ basic.transfer_type|missing %}}
+\\[1mm]
+%{- elif basic.sensor_type == "CMOS" -%}
+\textsl{Shutter type} \hfill %{{ basic.shutter_type|missing %}}
+\\[1mm]
+\textsl{Overlap capabilities} \hfill %{{ basic.overlap_capabilities|missing %}}
+\\[1mm]
+%{- endif -%}
+\textsl{Maximum readout rate} \hfill  %{{ basic.maximum_readout_rate|missing %}}
+\\[1mm]
+\textsl{Dark current compensation} \hfill   %{{ basic.dark_current_compensation|missing %}}
+\\[1mm]
+\textsl{Interface type} \hfill  %{{ basic.interface_type|missing %}}
+\\[1mm]
+%%%%%%%%%% SETUP
+%{ for key, value in setup.items() -%}
+\textsl{%{{ key %}}} \hfill %{{ value|missing %}}
+\\[1mm]
+%{ endfor -%}
+\end{multicols}
+\end{minipage}
+\\[5mm]
+%{ for op in operation_points %}
+	\underline{\textsl{Operation Point: \textbf{%{{ op.name %}}} (Page \pageref{%{{ op.id %}}})}}
+
+ 	%{ include 'op_header.tex' %}
+\\[5mm]
+%{ endfor %}
+
+\vfill
+\begin{center}
+\includegraphics[height=100mm,keepaspectratio]{%{{ basic.qe_plot|missing(marketing.missingplot) %}}}
+\end{center}

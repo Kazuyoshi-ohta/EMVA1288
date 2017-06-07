@@ -1,0 +1,16 @@
+\begin{minipage}[t]{0.975\linewidth}
+\begin{multicols}{2}
+\textbf{Camera setting} \hfill
+\\[1mm]
+%{ for key, value in op.camera_settings.items() -%}
+\textsl{%{{ key %}}} \hfill %{{ value %}}
+\\[1mm]
+%{ endfor -%}
+\textbf{Operation point parameters}
+\\[1mm]
+%{ for key, value in op.test_parameters.items() -%}
+\textsl{%{{ key %}}} \hfill %{{ value %}}
+\\[1mm]
+%{ endfor -%}
+\end{multicols}
+\end{minipage}

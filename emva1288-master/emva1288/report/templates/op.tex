@@ -1,0 +1,219 @@
+\newpage
+\ReportSection{Operation Point: \textbf{%{{ op.name %}}} (@%{{ op.test_parameters.Wavelength|missing %}})}
+
+\underline{\textsl{Summary sheet for Operation Point: \textbf{%{{ op.name %}}}\label{%{{ op.id %}}}} (@%{{ op.test_parameters.Wavelength|missing %}} wavelength)}
+
+%{ include 'op_header.tex' %}
+\\[10mm]
+%Plots
+\begin{minipage}[t]{0.690\linewidth}
+
+\includegraphics[width=0.95\linewidth,keepaspectratio]{%{{op.plots.PlotPTC %}}}
+
+\includegraphics[width=0.95\linewidth,keepaspectratio]{%{{op.plots.PlotSNR %}}}
+\end{minipage}
+%Results
+\begin{minipage}[t]{0.290\linewidth}
+
+\begin{tabular}{lr@{\hspace{1.4mm}}l}
+\multicolumn{3}{c}{\textbf{Performance}} \\[2mm]
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.QE.short %}} }} \\
+
+%{{ op.results.sensitivity.QE.symbol %}} &
+%{{ '%.2f' % op.results.sensitivity.QE.value %}} &
+%{{ op.results.sensitivity.QE.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.K.short %}}}} \\
+
+%{{ op.results.sensitivity.K.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.K.value %}} &
+%{{ op.results.sensitivity.K.unit %}} \\
+
+%{{ op.results.sensitivity.inverse_K.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.inverse_K.value %}} &
+%{{ op.results.sensitivity.inverse_K.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{Temporal dark noise}} \\
+
+%{{ op.results.sensitivity.sigma_d.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.sigma_d.value %}} &
+%{{ op.results.sensitivity.sigma_d.unit %}} \\
+
+%{{ op.results.sensitivity.sigma_y_dark.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.sigma_y_dark.value %}} &
+%{{ op.results.sensitivity.sigma_y_dark.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.SNR_max.short %}}}} \\
+
+%{{ op.results.sensitivity.SNR_max.symbol %}} &
+%{{ '%.0f' % op.results.sensitivity.SNR_max.value %}} \\
+
+& % %{{ op.results.sensitivity.SNR_max_dB.symbol %}} &
+%{{ '%.2f' % op.results.sensitivity.SNR_max_dB.value %}} &
+%{{ op.results.sensitivity.SNR_max_dB.unit %}} \\
+
+& % %{{ op.results.sensitivity.SNR_max_bit.symbol %}} &
+%{{ '%.1f' % op.results.sensitivity.SNR_max_bit.value %}} &
+%{{ op.results.sensitivity.SNR_max_bit.unit %}} \\
+
+%{{ op.results.sensitivity.inverse_SNR_max.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.inverse_SNR_max.value %}} &
+%{{ op.results.sensitivity.inverse_SNR_max.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.u_p_min.short %}}}} \\
+
+%{{ op.results.sensitivity.u_p_min.symbol %}}  &
+%{{ op.results.sensitivity.u_p_min.value|missingnumber(3) %}} &
+%{{ op.results.sensitivity.u_p_min.unit %}} \\
+
+%{{ op.results.sensitivity.u_p_min_area.symbol %}}  &
+%{{ op.results.sensitivity.u_p_min_area.value|missingnumber(3) %}} &
+%{{ op.results.sensitivity.u_p_min_area.unit %}} \\
+
+%{{ op.results.sensitivity.u_e_min.symbol %}} &
+%{{ '%.3f' % op.results.sensitivity.u_e_min.value %}} &
+%{{ op.results.sensitivity.u_e_min.unit %}} \\
+
+%{{ op.results.sensitivity.u_e_min_area.symbol %}} &
+%{{ op.results.sensitivity.u_e_min_area.value|missingnumber(3) %}} &
+%{{ op.results.sensitivity.u_e_min_area.unit %}} \\[5mm]
+
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.u_p_sat.short %}}}} \\
+
+%{{ op.results.sensitivity.u_p_sat.symbol %}}  &
+%{{ '%.0f' % op.results.sensitivity.u_p_sat.value %}} &
+%{{ op.results.sensitivity.u_p_sat.unit %}} \\
+
+%{{ op.results.sensitivity.u_p_sat_area.symbol %}}  &
+%{{ op.results.sensitivity.u_p_sat_area.value|missingnumber(3) %}} &
+%{{ op.results.sensitivity.u_p_sat_area.unit %}} \\
+
+%{{ op.results.sensitivity.u_e_sat.symbol %}} &
+%{{ '%.0f' % op.results.sensitivity.u_e_sat.value %}} &
+%{{ op.results.sensitivity.u_e_sat.unit %}} \\
+
+%{{ op.results.sensitivity.u_e_sat_area.symbol %}} &
+%{{ op.results.sensitivity.u_e_sat_area.value|missingnumber(0) %}} &
+%{{ op.results.sensitivity.u_e_sat_area.unit %}} \\[5mm]
+
+
+\multicolumn{3}{l}{\textbf{%{{ op.results.sensitivity.DR.short %}}}} \\
+
+%{{ op.results.sensitivity.DR.symbol %}} &
+%{{ '%.0f' % op.results.sensitivity.DR.value %}} \\
+
+& % %{{ op.results.sensitivity.DR_dB.symbol %}} &
+%{{ '%.1f' % op.results.sensitivity.DR_dB.value %}} &
+%{{ op.results.sensitivity.DR_dB.unit %}} \\
+
+& % %{{ op.results.sensitivity.DR_bit.symbol %}} &
+%{{ '%.1f' % op.results.sensitivity.DR_bit.value %}} &
+%{{ op.results.sensitivity.DR_bit.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{Spatial Nonuniformities}} \\
+
+%{{ op.results.spatial.DSNU1288.symbol %}} &
+%{{ '%.1f' % op.results.spatial.DSNU1288.value %}} &
+%{{ op.results.spatial.DSNU1288.unit %}} \\
+
+& % %{{ op.results.spatial.DSNU1288_DN.symbol %}} &
+%{{ '%.1f' % op.results.spatial.DSNU1288_DN.value %}} &
+%{{ op.results.spatial.DSNU1288_DN.unit %}} \\
+
+%{{ op.results.spatial.PRNU1288.symbol %}} &
+%{{ '%.1f' % op.results.spatial.PRNU1288.value %}} &
+%{{ op.results.spatial.PRNU1288.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{Linearity error}} \\
+
+%{{ op.results.linearity.LE_min.symbol %}} &
+%{{ '%.3f' % op.results.linearity.LE_min.value %}} &
+%{{ op.results.linearity.LE_min.unit %}} \\
+
+%{{ op.results.linearity.LE_max.symbol %}} &
+%{{ '%.3f' % op.results.linearity.LE_max.value %}} &
+%{{ op.results.linearity.LE_max.unit %}} \\[5mm]
+
+\multicolumn{3}{l}{\textbf{Dark current}} \\
+
+%{{ op.results.dark_current.u_I_mean.symbol %}} &
+%{{ op.results.dark_current.u_I_mean.value|missingnumber(3) %}} &
+%{{ op.results.dark_current.u_I_mean.unit %}} \\
+&
+%{{ op.results.dark_current.u_I_mean_DN.value|missingnumber(3) %}} &
+%{{ op.results.dark_current.u_I_mean_DN.unit %}} \\
+
+%{{ op.results.dark_current.u_I_var.symbol %}} &
+%{{ op.results.dark_current.u_I_var.value|missingnumber(3) %}} &
+%{{ op.results.dark_current.u_I_var.unit %}} \\
+&
+%{{ op.results.dark_current.u_I_var_DN.value|missingnumber(3) %}} &
+%{{ op.results.dark_current.u_I_var_DN.unit %}}  \\[5mm]
+
+\end{tabular}
+\end{minipage}
+
+
+
+%{ if not op.summary_only %}
+%Extra plots
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotSensitivity %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotUyDark %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotLinearity %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotDeviationLinearity %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotHorizontalSpectrogramPRNU %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotHorizontalSpectrogramDSNU %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotVerticalSpectrogramPRNU %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotVerticalSpectrogramDSNU %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotLogarithmicHistogramDSNU %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotLogarithmicHistogramPRNU %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotAccumulatedLogHistogramDSNU %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotAccumulatedLogHistogramPRNU %}}}
+\end{center}
+\vfill
+\newpage
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotHorizontalProfile %}}}
+\end{center}
+\begin{center}
+\includegraphics[height=0.45\textheight,keepaspectratio]{%{{ op.plots.PlotVerticalProfile %}}}
+\end{center}
+\vfill
+
+%{ endif %}
